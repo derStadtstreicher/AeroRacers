@@ -1,8 +1,9 @@
 #include "App.hpp"
+#include "settings.hpp"
 
 App::App() 
   :
-  window(sf::VideoMode({1366,768}),"Typerion",sf::Style::Fullscreen),
+  window(sf::VideoMode({X,Y}),"Typerion",sf::Style::Fullscreen),
   states(State::Type::count),
   race(&states, &window),
   quitter()

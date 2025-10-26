@@ -3,6 +3,7 @@
 
 #include "Game.hpp"
 #include "State.hpp"
+#include "Car.hpp"
 
 class Race : public Game, public State {
 
@@ -17,13 +18,14 @@ private:
   State* next_state;
 
   sf::Clock clock;
-  sf::CircleShape car;
+  Car car;
   
   State* processEvents();
-  void update_pos(std::array<size_t,3>* pos, size_t t, size_t dt);
-  void render(const std::array<size_t, 3>& pos);
+  void update_pos(std::array<double,3>& pos, double t, double dt);
+  void render(const std::array<double, 3>& pos);
   void handleInput();
-  State* handleOffTextInput (sf::Keyboard::Key key, bool isPressed);
+  State* handleInput (sf::Keyboard::Key key, bool isPressed);
+  void setup_cars();  
 
 };
 
