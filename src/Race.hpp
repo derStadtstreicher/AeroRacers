@@ -20,8 +20,8 @@ private:
   sf::CircleShape car;
   
   State* processEvents();
-  void update();
-  void render();
+  void update_pos(std::array<size_t,3>* pos, size_t t, size_t dt);
+  void render(const std::array<size_t, 3>& pos);
   void handleInput();
   State* handleOffTextInput (sf::Keyboard::Key key, bool isPressed);
 
